@@ -7,6 +7,7 @@
 <a href='https://github.com/gpuett/im-pour-java-server'>Java Server Github Link</a>
 
 ## Description
+A web application built with React, this happy hour finder lets financially frugal Portlanders find cheap libations.
 
 ## Setup/Installation Requirements
 
@@ -19,6 +20,7 @@
 * User authentication for:
   * Administrative route to edit and delete outdated happy hour information
   * User profiles to comment, like, and share deals
+* React Native support
 
 ## Known Bugs
 
