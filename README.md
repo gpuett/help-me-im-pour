@@ -10,6 +10,16 @@
 
 ## Setup/Installation Requirements
 
+## MVP Feature List
+ - [x] Custom server to store/edit/delete happy hour information by bar
+ - [ ] User interface to view and add happy hour information
+ - [ ] Global time cross reference to list all current details
+
+## Stretch Goals
+* User authentication for:
+  * Administrative route to edit and delete outdated happy hour information
+  * User profiles to comment, like, and share deals
+
 ## Known Bugs
 
 ## Technologies Used
