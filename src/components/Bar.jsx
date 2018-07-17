@@ -1,11 +1,18 @@
 import React from 'react';
+import { fetchBarList } from './../actions';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
 
-function Bar() {
+function Bar({dispatch}) {
   return(
     <div>
-      <p>bars works</p>
+      
     </div>
   );
 }
 
-export default Bar;
+Bar.propTypes = {
+  dispatch: PropTypes.func
+}
+
+export default connect()(Bar);
