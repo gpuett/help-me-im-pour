@@ -22,6 +22,9 @@ A web application built with React, this happy hour finder lets financially frug
   * User profiles to comment, like, and share deals
 * React Native support
 
+### Component Structure
+![Web-view components](./src/assets/images/components.png)
+
 ## Known Bugs
 
 ## Technologies Used
