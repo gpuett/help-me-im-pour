@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 function BarList(props) {
   return(
     <div>
-      <hr/>
       {props.barList.map((bar) =>
         <Bar name={bar.name}
           address={bar.address}

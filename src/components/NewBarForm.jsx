@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function NewBarForm(props) {
   let _name = null;
@@ -10,7 +11,12 @@ function NewBarForm(props) {
 
   function handleNewBarFormSubmission(e) {
     e.preventDefault();
-    props.onNewBarFormSubmission({name: _name.value, address: _address.vlaue, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value});
+    props.onNewBarFormSubmission({name: _name.value, address: _address.value, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value, id: v4()});
+    _name.value = '';
+    _address.value = '';
+    _phone.value = '';
+    _deal.value = '';
+    _happyHour.value = '';
   }
 
   return(
