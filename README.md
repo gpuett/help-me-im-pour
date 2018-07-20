@@ -28,6 +28,13 @@ A web application built with React, this happy hour finder lets financially frug
 ## Known Bugs
 
 ## Technologies Used
+* Front End
+  * React
+  * Redux
+* Back End
+  * Java
+  * SQL
+  * Spark
 
 ## Support and contact details
 
