@@ -47,6 +47,7 @@ function NewBarForm(props) {
           type="text" placeholder="Happy Hour" required
           ref={(input) => {_happyHour = input;}}/>
         <br/>
+        <br/>
         <button type='submit'>Submit</button>
         <br/>
       </form>
