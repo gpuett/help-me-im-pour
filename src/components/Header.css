@@ -1,0 +1,8 @@
+.header-wrapper img {
+  width: 100%;
+}
+
+.header-wrapper a {
+  color: white;
+  text-decoration: underline;
+}

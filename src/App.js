@@ -18,7 +18,7 @@ class App extends Component {
       currentDeals: null,
       error: null,
       isLoaded: false,
-      masterBarList: []
+      masterBarList: {},
     };
     this.handleAddingNewBarToList = this.handleAddingNewBarToList.bind(this);
   }
@@ -34,7 +34,6 @@ class App extends Component {
           isLoaded: true,
           masterBarList: result
         });
-        console.log(result);
       },
       (error) => {
         this.setState({
@@ -60,11 +59,11 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path='/' render={(props)=><Current
-              barList={this.props.masterBarList}
+              barList={this.state.masterBarList}
               currentRouterPath={props.location.pathname}/>}
             />
             <Route path='/bars' render={()=><BarList
-              barList={this.props.masterBarList}/>}
+              barList={this.state.masterBarList}/>}
             />
             <Route path='/NewBar' render={()=> <NewBarForm
               onNewBarCreation={this.handleAddingNewBarToList}/>}
