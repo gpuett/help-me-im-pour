@@ -24,7 +24,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://im-pour.herokuapp.com/bars')
+    fetch('https://im-pour.herokuapp.com/bars', {
+      mode: 'no-cors'
+    })
     .then(res => res.json())
     .then(
       (result) => {
