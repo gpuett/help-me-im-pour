@@ -2,6 +2,7 @@ import React from 'react';
 import Bar from './Bar';
 import PropTypes from 'prop-types';
 import { fetchBarList } from './../actions';
+import './BarList.css';
 
 function BarList(props) {
 
