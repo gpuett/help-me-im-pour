@@ -8,9 +8,49 @@ import Error404 from './components/Error404';
 import NewBarForm from './components/NewBarForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import v4 from 'uuid';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentDeals: null,
+      error: null,
+      isLoaded: false,
+      masterBarList: []
+    };
+    this.handleAddingNewBarToList = this.handleAddingNewBarToList.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('https://im-pour.herokuapp.com/bars')
+    .then(res => res.json())
+    .then(
+      (result) => {
+        this.setState({
+          isLoaded: true,
+          masterBarList: result
+        });
+        console.log(result);
+      },
+      (error) => {
+        this.setState({
+          isLoaded: true,
+          error
+        });
+      }
+    )
+  }
+
+  handleAddingNewBarToList(newBar){
+    let newBarId = v4();
+    let newMasterBarList = Object.assign({}, this.state.masterBarList, {
+      [newBarId]: newBar
+    });
+    this.setState({masterBarList: newMasterBarList});
+  }
+
   render() {
     return (
       <HashRouter>
@@ -24,7 +64,9 @@ class App extends Component {
             <Route path='/bars' render={()=><BarList
               barList={this.props.masterBarList}/>}
             />
-            <Route path='/NewBar' render={()=> <NewBarForm/>}/>
+            <Route path='/NewBar' render={()=> <NewBarForm
+              onNewBarCreation={this.handleAddingNewBarToList}/>}
+            />
             <Route component={Error404} />
           </Switch>
         </div>
