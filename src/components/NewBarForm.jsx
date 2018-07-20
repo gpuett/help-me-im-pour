@@ -4,8 +4,9 @@ import { v4 } from 'uuid';
 import c from './../constants';
 import './NewBarForm.css';
 import PropTypes from 'prop-types';
+import {addBar} from './../actions';
 
-function NewBarForm(props) {
+function NewBarForm({dispatch}) {
   let _name = null;
   let _address = null;
   let _phone = null;
@@ -13,7 +14,6 @@ function NewBarForm(props) {
   let _happyHour = null;
 
   function handleNewBarFormSubmission(e) {
-    const { dispatch } = props;
     e.preventDefault();
     const action = {
       type: c.ADD_BAR,

@@ -1,5 +1,6 @@
 import c from './../constants';
 
+
 export default (state = {}, action) => {
   let newState;
   const { name, address, phone, deal, happyHour, id } = action;

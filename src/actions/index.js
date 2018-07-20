@@ -1,7 +1,18 @@
 import * as types from './../constants/ActionTypes';
-
+import constants from './../constants';
+const {c} = constants;
 
 // export const requestBar
+
+// export function addBar(_name, _address, _phone, _deal, _happyHour) {
+//   return () => bars.push({
+//     name: _name,
+//     address: _address,
+//     phone: _phone,
+//     deal: _deal,
+//     happyHour: _happyHour
+//   });
+// }
 
 export const receiveBar = (name, address, phone, deal, happyHour, id) => ({
   type: types.RECEIVE_BAR,

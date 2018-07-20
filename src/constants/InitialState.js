@@ -1,4 +1,5 @@
 export const InitialState = {
+  currentDeals: null,
   masterBarList:
     [
       {

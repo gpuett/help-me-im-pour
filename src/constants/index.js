@@ -3,5 +3,5 @@ import * as types from './ActionTypes';
 
 export default {
   InitialState: InitialState,
-  c: types
+  types: types
 }
