@@ -6,7 +6,7 @@ import { fetchBarList } from './../actions';
 function BarList(props) {
 
   return(
-    <div>
+    <div className='list-wrapper'>
       {Object.keys(props.barList).map(function(barId) {
         let bar = props.barList[barId];
         return <Bar name={bar.name}

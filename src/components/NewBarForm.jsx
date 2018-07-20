@@ -24,7 +24,7 @@ function NewBarForm(props) {
   }
 
   return(
-    <div>
+    <div className='form-wrapper'>
       <form onSubmit={handleNewBarFormSubmission}>
         <h1>Add Happy Hour Info</h1>
         <input

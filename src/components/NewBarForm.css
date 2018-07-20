@@ -20,9 +20,6 @@ button {
   border: 1px solid black;
 }
 
-form {
-  border-radius: 10px;
-}
 
 @media only screen and (max-width: 768px) {
   input {
