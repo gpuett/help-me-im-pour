@@ -16,7 +16,7 @@ function NewBarForm({dispatch}) {
   function handleNewBarFormSubmission(e) {
     e.preventDefault();
     const action = {
-      type: c.ADD_BAR,
+      type: 'ADD_BAR',
       id: v4(),
       name: _name.value,
       address: _address.value,

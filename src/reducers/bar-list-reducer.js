@@ -6,7 +6,7 @@ export default (state = {}, action) => {
   const { name, address, phone, deal, happyHour, id } = action;
 
   switch (action.type) {
-    case c.ADD_BAR:
+    case 'ADD_BAR':
       newState = Object.assign({}, state, {
         [id]: {
           name: name,

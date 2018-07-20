@@ -19,7 +19,7 @@ function BarList(props) {
 }
 
 BarList.propTypes = {
-  barList: PropTypes.array,
+  barList: PropTypes.object,
   currentRouterPath: PropTypes.string
 };
 

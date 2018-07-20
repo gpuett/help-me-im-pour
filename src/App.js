@@ -39,7 +39,7 @@ App.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    masterBarList: state
+    masterBarList: state.masterBarList
   }
 }
 
