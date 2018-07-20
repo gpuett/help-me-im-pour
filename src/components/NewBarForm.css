@@ -1,0 +1,13 @@
+input {
+  width: 20vw;
+  height: 3vh;
+  text-align: center;
+}
+
+button {
+  width: 8vw;
+  height: 4vh;
+  background-color: grey;
+  color: white;
+  border-radius: 20px;
+}

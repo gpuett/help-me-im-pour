@@ -24,4 +24,4 @@ Bar.propTypes = {
   happyHour: PropTypes.string.isRequired
 }
 
-export default Bar;
+export default connect()(Bar);

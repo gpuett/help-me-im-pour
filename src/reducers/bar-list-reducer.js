@@ -20,7 +20,7 @@ export default (state = {}, action) => {
 
     case c.RECEIVE_BAR:
         newState = Object.assign({}, state);
-        newState[action.bar.if] = action.bar;
+        newState[action.bar.id] = action.bar;
         return newState;
 
   default:

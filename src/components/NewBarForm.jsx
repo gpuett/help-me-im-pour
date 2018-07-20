@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { v4 } from 'uuid';
 import c from './../constants';
+import './NewBarForm.css';
+import PropTypes from 'prop-types';
 
 function NewBarForm(props) {
   let _name = null;
@@ -51,7 +53,7 @@ function NewBarForm(props) {
           ref={(input) => {_deal = input;}}/>
         <br/>
         <input
-          type="text" placeholder="Happy Hour"
+          type="text" placeholder="Happy Hour" required
           ref={(input) => {_happyHour = input;}}/>
         <br/>
         <button type='submit'>Submit</button>
@@ -60,6 +62,10 @@ function NewBarForm(props) {
     </div>
   );
 }
+
+NewBarForm.propTypes = {
+  dispatch: PropTypes.func
+};
 
 
 export default connect() (NewBarForm);
