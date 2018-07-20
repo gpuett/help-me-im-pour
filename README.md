@@ -44,4 +44,4 @@ _Email no one with any questions, comments, or concerns._
 
 *This software is licensed under the MIT license*
 
-Copyright (c) 2018 **Garnett Puett**
+Copyright &copy; 2018 **Garnett Puett**

@@ -10,21 +10,43 @@ import NewBarForm from './components/NewBarForm';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      masterBarList:
+      [
+        {
+          name: 'Kelly\'s Olympian',
+          address: '426 SW Washington St, Portland, OR 97204',
+          phone: '503-228-3669',
+          deal: '$1 off draft beer, well drinks and wine',
+          happyHour: '4pm-7pm',
+          id: 1
+        }
+      ]
+    }
     this.handleAddingNewBarToList = this.handleAddingNewBarToList.bind(this);
   }
   handleAddingNewBarToList(newBar){
-    // set state => post to API
+    let newMasterBarList = this.state.masterBarList.slice();
+    newMasterBarList.push(newBar);
+    this.setState({masterBarList: newMasterBarList});
   }
+
   render() {
     return (
       <HashRouter>
         <div className="App">
           <Header />
           <Switch>
-            <Route exact path='/' component={Current} />
-            <Route path='/bars' component={BarList}/>
+            <Route exact path='/' render={(props)=><Current
+              barList={this.state.masterBarList}
+              currentRouterPath={props.location.pathname}/>}
+            />
+            <Route path='/bars' render={()=><BarList
+              barList={this.state.masterBarList}/>}
+            />
             <Route path='/NewBar' render={()=> <NewBarForm
-              onNewBarFormSubmission={this.handleAddingNewBarToList}/>} />
+              onNewBarFormSubmission={this.handleAddingNewBarToList}/>}
+            />
             <Route component={Error404} />
           </Switch>
         </div>
