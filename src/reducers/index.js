@@ -1,9 +1,10 @@
 import barListReducer from './bar-list-reducer';
-import addBarReducer from './add-bar-reducer';
+import currentDealReducer from './current-deal-reducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
-  masterBarList: barListReducer
+  masterBarList: barListReducer,
+  currentDeals: currentDealReducer
 });
 
 export default rootReducer;

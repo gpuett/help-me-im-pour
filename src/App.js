@@ -9,24 +9,11 @@ import NewBarForm from './components/NewBarForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   masterBarList:
-    //   [
-    //     {
-    //       name: 'Kelly\'s Olympian',
-    //       address: '426 SW Washington St, Portland, OR 97204',
-    //       phone: '503-228-3669',
-    //       deal: '$1 off draft beer, well drinks and wine',
-    //       happyHour: '4pm-7pm',
-    //       id: 1
-    //     }
-    //   ]
-    // }
   }
-
 
   render() {
     return (
