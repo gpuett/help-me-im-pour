@@ -1,5 +1,4 @@
-import constants from './../constants';
-const { c } = constants;
+import c from './../constants';
 
 export default (state = {}, action) => {
   let newState;
@@ -13,7 +12,8 @@ export default (state = {}, action) => {
           address: address,
           phone: phone,
           deal: deal,
-          happyHour: happyHour
+          happyHour: happyHour,
+          id: id
         }
       });
       return newState;

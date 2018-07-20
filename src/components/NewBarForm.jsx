@@ -1,6 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { v4 } from 'uuid';
+import c from './../constants';
 
 function NewBarForm(props) {
   let _name = null;
@@ -10,8 +11,18 @@ function NewBarForm(props) {
   let _happyHour = null;
 
   function handleNewBarFormSubmission(e) {
+    const { dispatch } = props;
     e.preventDefault();
-    props.onNewBarFormSubmission({name: _name.value, address: _address.value, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value, id: v4()});
+    const action = {
+      type: c.ADD_BAR,
+      id: v4(),
+      name: _name.value,
+      address: _address.value,
+      phone: _phone.value,
+      deal: _deal.value,
+      happyHour: _happyHour.value
+    };
+    dispatch(action);
     _name.value = '';
     _address.value = '';
     _phone.value = '';
@@ -50,8 +61,5 @@ function NewBarForm(props) {
   );
 }
 
-NewBarForm.propTypes = {
-  onNewBarFormSubmission: PropTypes.func
-};
 
-export default NewBarForm;
+export default connect() (NewBarForm);
