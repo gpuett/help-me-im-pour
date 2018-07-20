@@ -1,5 +1,6 @@
 import * as types from './../constants/ActionTypes';
 import constants from './../constants';
+import axios from 'axios';
 const {c} = constants;
 
 // export const requestBar

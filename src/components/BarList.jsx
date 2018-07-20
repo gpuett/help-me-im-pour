@@ -1,8 +1,10 @@
 import React from 'react';
 import Bar from './Bar';
 import PropTypes from 'prop-types';
+import { fetchBarList } from './../actions';
 
 function BarList(props) {
+
   return(
     <div>
       {Object.keys(props.barList).map(function(barId) {

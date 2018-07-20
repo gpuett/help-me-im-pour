@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "ajv": "^6.5.2",
+    "axios": "^0.18.0",
     "file-loader": "^1.1.6",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
@@ -24,7 +25,6 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/*.jsx src/**/**; exit 0",
     "lint-fix": "eslint src/*.jsx src/**/** --fix; exit 0"
-
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
