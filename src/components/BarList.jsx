@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 function BarList(props) {
   return(
     <div>
-      {props.barList.map((bar) =>
-        <Bar name={bar.name}
+      {Object.keys(props.barList).map(function(barId) {
+        let bar = props.barList[barId];
+        return <Bar name={bar.name}
           address={bar.address}
           phone={bar.phone}
           deal={bar.deal}
           happyHour={bar.happyHour}
-          key={bar.id}/>
-      )}
+          key={barId}/>;
+      })}
     </div>
   );
 }
