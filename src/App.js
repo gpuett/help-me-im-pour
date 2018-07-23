@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Switch, Route, HashRouter, withRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Current from './components/Current';
 import BarList from './components/BarList';
 import Error404 from './components/Error404';
 import NewBarForm from './components/NewBarForm';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import v4 from 'uuid';
+
 
 
 class App extends Component {
@@ -18,18 +16,21 @@ class App extends Component {
       currentDeals: null,
       error: null,
       isLoaded: false,
-      masterBarList: {},
+      masterBarList: [],
     };
     this.handleAddingNewBarToList = this.handleAddingNewBarToList.bind(this);
   }
 
   componentDidMount() {
-    fetch('https://im-pour.herokuapp.com/bars', {
-      mode: 'no-cors'
+    console.log(this.state);
+    fetch('https://im-pour.herokuapp.com/bars')
+    .then(res => {
+      console.log(res)
+      return res.json()
     })
-    .then(res => res.json())
     .then(
       (result) => {
+        console.log(result);
         this.setState({
           isLoaded: true,
           masterBarList: result
@@ -45,9 +46,8 @@ class App extends Component {
   }
 
   handleAddingNewBarToList(newBar){
-    let newBarId = v4();
     let newMasterBarList = Object.assign({}, this.state.masterBarList, {
-      [newBarId]: newBar
+      [newBar.id]: newBar
     });
     this.setState({masterBarList: newMasterBarList});
   }
@@ -76,14 +76,5 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  masterBarList: PropTypes.object
-};
 
-const mapStateToProps = state => {
-  return {
-    masterBarList: state.masterBarList
-  }
-}
-
-export default withRouter(connect(mapStateToProps)(App));
+export default App;

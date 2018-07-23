@@ -14,8 +14,21 @@ function NewBarForm(props) {
   let _happyHour = null;
 
   function handleNewBarFormSubmission(e) {
+    let body = {
+      'name': _name.value,
+      'address': _address.value,
+      'phone': _phone.value,
+      'deal': _deal.value,
+      'happyHour': _happyHour.value
+    }
     e.preventDefault();
-    props.onNewBarCreation({name: _name.value, address: _address.value, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value});
+    fetch('https://im-pour.herokuapp.com/bars/new', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify(body)
+    })
+    console.log(body);
+  //   props.onNewBarCreation({name: _name.value, address: _address.value, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value});
     _name.value = '';
     _address.value = '';
     _phone.value = '';

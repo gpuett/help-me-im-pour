@@ -1,6 +1,10 @@
+.header-wrapper img {
+  width: 100%;
+}
+
 .header-wrapper {
-  padding-top: 28vh;
-  z-index: 2;
+  background-color: #09070A;
+  padding-bottom: 10px;
 }
 
 .header-wrapper a {

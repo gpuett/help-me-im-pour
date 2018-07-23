@@ -4,14 +4,16 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 function Bar(props) {
+
+
   return(
     <div>
-      <hr/>
       <h3>{props.name}</h3>
       <h4>{props.deal}</h4>
       <h4>{props.happyHour}</h4>
       <h6>{props.address}</h6>
       <h6>{props.phone}</h6>
+      <hr/>
     </div>
   );
 }

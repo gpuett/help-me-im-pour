@@ -1,7 +1,6 @@
 import React from 'react';
 import Bar from './Bar';
 import PropTypes from 'prop-types';
-import { fetchBarList } from './../actions';
 import './BarList.css';
 
 function BarList(props) {
@@ -22,7 +21,7 @@ function BarList(props) {
 }
 
 BarList.propTypes = {
-  barList: PropTypes.object,
+  barList: PropTypes.array,
   currentRouterPath: PropTypes.string
 };
 

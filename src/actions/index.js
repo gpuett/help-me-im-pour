@@ -1,6 +1,6 @@
 import * as types from './../constants/ActionTypes';
 import constants from './../constants';
-import axios from 'axios';
+// import axios from 'axios';
 const {c} = constants;
 
 
@@ -28,7 +28,9 @@ export const receiveBar = (name, address, phone, deal, happyHour, id) => ({
 export function fetchBarList() {
   return function (dispatch) {
 
-    return fetch('https://im-pour.herokuapp.com/bars').then(
+    return fetch('https://im-pour.herokuapp.com/bars', {
+      mode: 'no-cors'
+    }).then(
       response => response.json(),
       error => console.log('Something is wrong', error)
     ).then(function(json) {
