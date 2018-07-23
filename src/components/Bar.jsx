@@ -1,6 +1,4 @@
 import React from 'react';
-import { fetchBarList } from './../actions';
-import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
 function Bar(props) {
@@ -26,4 +24,4 @@ Bar.propTypes = {
   happyHour: PropTypes.string.isRequired
 }
 
-export default connect()(Bar);
+export default Bar;

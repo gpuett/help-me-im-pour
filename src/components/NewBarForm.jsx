@@ -1,10 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { v4 } from 'uuid';
-import c from './../constants';
 import './NewBarForm.css';
 import PropTypes from 'prop-types';
-import {addBar} from './../actions';
 
 function NewBarForm(props) {
   let _name = null;
@@ -28,7 +24,6 @@ function NewBarForm(props) {
       body: JSON.stringify(body)
     })
     console.log(body);
-  //   props.onNewBarCreation({name: _name.value, address: _address.value, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value});
     _name.value = '';
     _address.value = '';
     _phone.value = '';

@@ -18,19 +18,15 @@ class App extends Component {
       isLoaded: false,
       masterBarList: [],
     };
-    this.handleAddingNewBarToList = this.handleAddingNewBarToList.bind(this);
   }
 
   componentDidMount() {
-    console.log(this.state);
     fetch('https://im-pour.herokuapp.com/bars')
     .then(res => {
-      console.log(res)
       return res.json()
     })
     .then(
       (result) => {
-        console.log(result);
         this.setState({
           isLoaded: true,
           masterBarList: result
@@ -43,13 +39,6 @@ class App extends Component {
         });
       }
     )
-  }
-
-  handleAddingNewBarToList(newBar){
-    let newMasterBarList = Object.assign({}, this.state.masterBarList, {
-      [newBar.id]: newBar
-    });
-    this.setState({masterBarList: newMasterBarList});
   }
 
   render() {
@@ -65,8 +54,7 @@ class App extends Component {
             <Route path='/bars' render={()=><BarList
               barList={this.state.masterBarList}/>}
             />
-            <Route path='/NewBar' render={()=> <NewBarForm
-              onNewBarCreation={this.handleAddingNewBarToList}/>}
+            <Route path='/NewBar' render={()=> <NewBarForm/>}
             />
             <Route component={Error404} />
           </Switch>
