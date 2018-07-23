@@ -38,7 +38,7 @@ A web application built with React, this happy hour finder lets financially frug
 
 ## Support and contact details
 
-_Email no one with any questions, comments, or concerns._
+_Feel free to email me at gpuett@gmail.com for comments or concerns._
 
 ### License
 
