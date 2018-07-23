@@ -1,10 +1,13 @@
 import React from 'react';
 import Bar from './Bar';
 import PropTypes from 'prop-types';
+import { fetchBarList } from './../actions';
+import './BarList.css';
 
 function BarList(props) {
+
   return(
-    <div>
+    <div className='list-wrapper'>
       {Object.keys(props.barList).map(function(barId) {
         let bar = props.barList[barId];
         return <Bar name={bar.name}

@@ -6,7 +6,7 @@ import './NewBarForm.css';
 import PropTypes from 'prop-types';
 import {addBar} from './../actions';
 
-function NewBarForm({dispatch}) {
+function NewBarForm(props) {
   let _name = null;
   let _address = null;
   let _phone = null;
@@ -15,16 +15,7 @@ function NewBarForm({dispatch}) {
 
   function handleNewBarFormSubmission(e) {
     e.preventDefault();
-    const action = {
-      type: 'ADD_BAR',
-      id: v4(),
-      name: _name.value,
-      address: _address.value,
-      phone: _phone.value,
-      deal: _deal.value,
-      happyHour: _happyHour.value
-    };
-    dispatch(action);
+    props.onNewBarCreation({name: _name.value, address: _address.value, phone: _phone.value, deal: _deal.value, happyHour: _happyHour.value});
     _name.value = '';
     _address.value = '';
     _phone.value = '';
@@ -33,7 +24,7 @@ function NewBarForm({dispatch}) {
   }
 
   return(
-    <div>
+    <div className='form-wrapper'>
       <form onSubmit={handleNewBarFormSubmission}>
         <h1>Add Happy Hour Info</h1>
         <input
@@ -56,6 +47,7 @@ function NewBarForm({dispatch}) {
           type="text" placeholder="Happy Hour" required
           ref={(input) => {_happyHour = input;}}/>
         <br/>
+        <br/>
         <button type='submit'>Submit</button>
         <br/>
       </form>
@@ -64,8 +56,8 @@ function NewBarForm({dispatch}) {
 }
 
 NewBarForm.propTypes = {
-  dispatch: PropTypes.func
+  onNewBarCreation: PropTypes.func
 };
 
 
-export default connect() (NewBarForm);
+export default NewBarForm;

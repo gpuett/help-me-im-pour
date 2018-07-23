@@ -1,0 +1,9 @@
+.header-wrapper {
+  padding-top: 28vh;
+  z-index: 2;
+}
+
+.header-wrapper a {
+  color: white;
+  text-decoration: underline;
+}

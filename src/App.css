@@ -1,3 +1,12 @@
 .App {
+  height: 100vh;
   text-align: center;
+  background-image: url('./assets/images/glasses.jpg'), linear-gradient(black, purple);
+  background-size: 100vw;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  color: white;
+
+
 }
