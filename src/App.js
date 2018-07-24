@@ -11,6 +11,7 @@ import NewBarForm from './components/NewBarForm';
 
 class App extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       currentDeals: null,
@@ -19,6 +20,7 @@ class App extends Component {
       masterBarList: [],
     };
   }
+
 
   componentDidMount() {
     fetch('https://im-pour.herokuapp.com/bars')

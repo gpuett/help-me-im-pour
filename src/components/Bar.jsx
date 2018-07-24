@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Bar(props) {
-
-
-  return(
+  const barInfo =
     <div>
       <h3>{props.name}</h3>
       <h4>{props.deal}</h4>
@@ -12,8 +10,18 @@ function Bar(props) {
       <h6>{props.address}</h6>
       <h6>{props.phone}</h6>
       <hr/>
-    </div>
-  );
+    </div>;
+  if (props.currentRouterPath === '/') {
+    return (
+      <div> {barInfo} </div>
+    );
+  } else {
+    return(
+      <div>
+        {barInfo}
+      </div>
+    );
+  }
 }
 
 Bar.propTypes = {
@@ -21,7 +29,8 @@ Bar.propTypes = {
   address: PropTypes.string.isRequired,
   phone: PropTypes.string.isRequired,
   deal: PropTypes.string.isRequired,
-  happyHour: PropTypes.string.isRequired
+  happyHour: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string
 }
 
 export default Bar;

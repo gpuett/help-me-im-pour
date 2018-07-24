@@ -5,17 +5,29 @@ import './BarList.css';
 
 function BarList(props) {
 
+  console.log(props);
+
   return(
     <div className='list-wrapper'>
-      {Object.keys(props.barList).map(function(barId) {
+      {props.barList.map((bar) =>
+        <Bar name={bar.name}
+          address={bar.address}
+          phone={bar.phone}
+          deal={bar.deal}
+          happyHour={bar.happyHour}
+          currentRouterPath={props.currentRouterPath}
+          key={bar.id}/>
+      )}
+
+      {/* {Object.keys(props.barList).map(function(barId) {
         let bar = props.barList[barId];
         return <Bar name={bar.name}
           address={bar.address}
           phone={bar.phone}
           deal={bar.deal}
           happyHour={bar.happyHour}
-          key={barId}/>;
-      })}
+          key={bar.id}/>;
+      })} */}
     </div>
   );
 }

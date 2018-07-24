@@ -1,4 +1,6 @@
 .list-wrapper {
   height: 100%;
   overflow-y: auto;
+  font-family: 'Monoton', cursive;
+  
 }

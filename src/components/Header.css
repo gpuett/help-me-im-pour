@@ -9,5 +9,11 @@
 
 .header-wrapper a {
   color: white;
+  text-decoration: none;
+}
+
+.header-wrapper a:hover {
+  color: #EB88F6;
   text-decoration: underline;
+  font-size: 20px;
 }
