@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 function Current(props) {
 
-  console.log(props);
 
   function getDayOfWeek() {
     let day = new Date();
@@ -35,13 +34,15 @@ function Current(props) {
         <h3>Current Happy Hours:</h3>
       </div>
       <hr/>
-      <BarList barList={props.barList}/>
+      <BarList barList={props.barList}
+      currentRouterPath={props.currentRouterPath}/>
     </div>
   );
 }
 
 Current.propTypes = {
-  barList: PropTypes.array
+  barList: PropTypes.array,
+  currentRouterPath: PropTypes.string
 };
 
 export default Current;

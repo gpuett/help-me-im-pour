@@ -11,7 +11,6 @@ import NewBarForm from './components/NewBarForm';
 
 class App extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       currentDeals: null,
@@ -53,7 +52,8 @@ class App extends Component {
               barList={this.state.masterBarList}
               currentRouterPath={props.location.pathname}/>}
             />
-            <Route path='/bars' render={()=><BarList
+            <Route path='/bars' render={(props)=><BarList
+              currentRouterPath={props.location.pathname}
               barList={this.state.masterBarList}/>}
             />
             <Route path='/NewBar' render={()=> <NewBarForm/>}

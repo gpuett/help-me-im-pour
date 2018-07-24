@@ -5,7 +5,6 @@ import './BarList.css';
 
 function BarList(props) {
 
-  console.log(props);
 
   return(
     <div className='list-wrapper'>
@@ -19,16 +18,6 @@ function BarList(props) {
           currentRouterPath={props.currentRouterPath}
           key={bar.id}/>
       )}
-
-      {/* {Object.keys(props.barList).map(function(barId) {
-        let bar = props.barList[barId];
-        return <Bar name={bar.name}
-          address={bar.address}
-          phone={bar.phone}
-          deal={bar.deal}
-          happyHour={bar.happyHour}
-          key={bar.id}/>;
-      })} */}
     </div>
   );
 }
