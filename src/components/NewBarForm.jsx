@@ -7,7 +7,8 @@ function NewBarForm(props) {
   let _address = null;
   let _phone = null;
   let _deal = null;
-  let _happyHour = null;
+  let _happyHourStart = null;
+  let _happyHourEnd = null;
 
   function handleNewBarFormSubmission(e) {
     let body = {
@@ -15,10 +16,11 @@ function NewBarForm(props) {
       'address': _address.value,
       'phone': _phone.value,
       'deal': _deal.value,
-      'happyHour': _happyHour.value
+      'happyHourStart': _happyHourStart.value,
+      'happyHourEnd': _happyHourEnd.value
     }
     e.preventDefault();
-    fetch('https://im-pour.herokuapp.com/bars/new', {
+    fetch('https://help-me-im-pour.herokuapp.com/bars/new', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify(body)
@@ -28,7 +30,8 @@ function NewBarForm(props) {
     _address.value = '';
     _phone.value = '';
     _deal.value = '';
-    _happyHour.value = '';
+    _happyHourStart.value = '';
+    _happyHourEnd.value = '';
   }
 
   return(
@@ -52,8 +55,12 @@ function NewBarForm(props) {
           ref={(input) => {_deal = input;}}/>
         <br/>
         <input
-          type="text" placeholder="Happy Hour" required
-          ref={(input) => {_happyHour = input;}}/>
+          type="text" placeholder="Happy Hour Start" required
+          ref={(input) => {_happyHourStart = input;}}/>
+          <br/>
+        <input
+          type="text" placeholder="Happy Hour End" required
+          ref={(input) => {_happyHourEnd = input;}}/>
         <br/>
         <br/>
         <button type='submit'>Submit</button>

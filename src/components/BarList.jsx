@@ -14,7 +14,8 @@ function BarList(props) {
           address={bar.address}
           phone={bar.phone}
           deal={bar.deal}
-          happyHour={bar.happyHour}
+          happyHourStart={bar.happyHourStart}
+          happyHourEnd={bar.happyHourEnd}
           currentRouterPath={props.currentRouterPath}
           key={bar.id}/>
       )}

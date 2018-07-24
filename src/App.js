@@ -23,7 +23,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    fetch('https://im-pour.herokuapp.com/bars')
+    fetch('https://help-me-im-pour.herokuapp.com/bars')
     .then(res => {
       return res.json()
     })
