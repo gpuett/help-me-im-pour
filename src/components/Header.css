@@ -3,13 +3,14 @@
 }
 
 .header-wrapper {
-  background-color: #09070A;
-  padding-bottom: 10px;
+  background: #0B060C;
+  height: 47vh;
 }
 
 .header-wrapper a {
   color: white;
   text-decoration: none;
+
 }
 
 .header-wrapper a:hover {

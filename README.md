@@ -13,8 +13,8 @@ A web application built with React, this happy hour finder lets financially frug
 
 ## MVP Feature List
  - [x] Custom server to store/edit/delete happy hour information by bar
- - [ ] User interface to view and add happy hour information
- - [ ] Global time cross reference to list all current details
+ - [x] User interface to view and add happy hour information
+ - [ ] Local time cross reference to list all current details
 
 ## Stretch Goals
 * User authentication for:
@@ -30,11 +30,11 @@ A web application built with React, this happy hour finder lets financially frug
 ## Technologies Used
 * Front End
   * React
-  * Redux
+  * React Router
 * Back End
   * Java
   * SQL
-  * Spark
+  * Gradle/Maven
 
 ## Support and contact details
 
