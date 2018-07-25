@@ -4,10 +4,6 @@ import BarList from './BarList';
 import PropTypes from 'prop-types';
 
 function Current(props) {
-    console.log(props);
-
-
-
   function liveTime() {
     return new Date().toLocaleTimeString();
     // let now = new Date().toLocaleTimeString();

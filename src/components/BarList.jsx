@@ -4,49 +4,54 @@ import PropTypes from 'prop-types';
 import './BarList.css';
 
 function BarList(props) {
+  console.log(props);
   let pmPattern = RegExp(/pm$/i);
   let start;
   let end;
   let hour = new Date().getHours();
 
-  function getStart(props) {
-    if (pmPattern.test(props.happyHourStart)) {
-      return start = parseInt(props.happyHourStart, 10) + 12;
+  function getStart(bar) {
+    if (pmPattern.test(bar.happyHourStart)) {
+      return start = parseInt(bar.happyHourStart, 10) + 12;
     } else {
-      return start = parseInt(props.happyHourStart, 10);
+      return start = parseInt(bar.happyHourStart, 10);
     }
   }
 
-  function getEnd(props) {
-    if (pmPattern.test(props.happyHourEnd)) {
-      return end = parseInt(props.happyHourEnd, 10) + 12
+  function getEnd(bar) {
+    if (pmPattern.test(bar.happyHourEnd)) {
+      return end = parseInt(bar.happyHourEnd, 10) + 12
     } else {
-      return end = parseInt(props.happyHourEnd, 10)
+      return end = parseInt(bar.happyHourEnd, 10)
     }
   }
 
-  function currentDeals(props) {
-    let filteredProps;
-    getStart(props);
-    getEnd(props);
-    if (start < hour < end) {
-      return filteredProps = props;
-    }
+  function currentDeals(bar) {
+    getStart(bar);
+    getEnd(bar);
+    return (start < hour && hour < end)
   }
+
+  let currentDealsBarList = props.barList.filter((bar) => {
+    if (currentDeals(bar)) {
+      console.log(bar);
+      return bar;
+    }
+  })
 
 
   if (props.currentRouterPath === '/'){
     return(
       <div className='list-wrapper'>
-        {props.barList.map((bar) =>
-          <Bar name={bar.name}
-            address={bar.address}
-            phone={bar.phone}
-            deal={bar.deal}
-            happyHourStart={bar.happyHourStart}
-            happyHourEnd={bar.happyHourEnd}
-            currentRouterPath={props.currentRouterPath}
-            key={bar.id}/>
+        {currentDealsBarList.map((bar) =>
+            <Bar name={bar.name}
+              address={bar.address}
+              phone={bar.phone}
+              deal={bar.deal}
+              happyHourStart={bar.happyHourStart}
+              happyHourEnd={bar.happyHourEnd}
+              currentRouterPath={props.currentRouterPath}
+              key={bar.id}/>
         )}
       </div>
     );
