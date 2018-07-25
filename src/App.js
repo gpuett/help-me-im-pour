@@ -13,13 +13,10 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentDeals: null,
-      error: null,
-      isLoaded: false,
+      currentDeals: [],
       masterBarList: [],
     };
   }
-
 
   componentDidMount() {
     fetch('https://help-me-im-pour.herokuapp.com/bars')
@@ -29,13 +26,11 @@ class App extends Component {
     .then(
       (result) => {
         this.setState({
-          isLoaded: true,
           masterBarList: result
         });
       },
       (error) => {
         this.setState({
-          isLoaded: true,
           error
         });
       }
