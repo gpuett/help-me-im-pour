@@ -14,9 +14,9 @@ A web application built with React, this happy hour finder lets financially frug
 ## MVP Feature List
  - [x] Custom server to store/edit/delete happy hour information by bar
  - [x] User interface to view and add happy hour information
- - [ ] Local time cross reference to list all current details
+ - [x] Local time cross reference to list all current details
 
-## Stretch Goals
+## Future Feature List
 * User authentication for:
   * Administrative route to edit and delete outdated happy hour information
   * User profiles to comment, like, and share deals
@@ -26,6 +26,7 @@ A web application built with React, this happy hour finder lets financially frug
 ![Web-view components](./src/assets/images/components.png)
 
 ## Known Bugs
+No known bugs at this time.
 
 ## Technologies Used
 * Front End
@@ -33,6 +34,7 @@ A web application built with React, this happy hour finder lets financially frug
   * React Router
 * Back End
   * Java
+  * Spark
   * SQL
   * Gradle/Maven
 
