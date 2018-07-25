@@ -28,7 +28,7 @@ function BarList(props) {
   function currentDeals(bar) {
     getStart(bar);
     getEnd(bar);
-    return (start < hour && hour < end)
+    return (start <= hour && hour < end)
   }
 
   let currentDealsBarList = props.barList.filter((bar) => {
