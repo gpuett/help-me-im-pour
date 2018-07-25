@@ -65,9 +65,6 @@ class Current extends Component {
   // }
   //
   //
-  // if (props.currentRouterPath === '/') {
-  //   currentDeals(props);
-  //   console.log('hi');
   render() {
     return(
       <div className='current-wrapper'>
