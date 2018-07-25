@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './BarList.css';
 
 function BarList(props) {
-  console.log(props);
   let pmPattern = RegExp(/pm$/i);
   let start;
   let end;
@@ -34,9 +33,9 @@ function BarList(props) {
 
   let currentDealsBarList = props.barList.filter((bar) => {
     if (currentDeals(bar)) {
-      console.log(bar);
       return bar;
     }
+    return null;
   })
 
 

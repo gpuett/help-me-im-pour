@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 function Current(props) {
   function liveTime() {
     return new Date().toLocaleTimeString();
-    // let now = new Date().toLocaleTimeString();
-    // return setInterval(now, 1000);
   }
 
   return(
