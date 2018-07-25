@@ -3,7 +3,7 @@ import './App.css';
 import { Switch, Route, HashRouter } from 'react-router-dom';
 import Header from './components/Header';
 import Current from './components/Current';
-import BarList from './components/BarList';
+import AllBarList from './components/AllBarList';
 import Error404 from './components/Error404';
 import NewBarForm from './components/NewBarForm';
 
@@ -13,8 +13,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentDeals: [],
-      masterBarList: [],
+      masterBarList: []
     };
   }
 
@@ -47,7 +46,7 @@ class App extends Component {
               barList={this.state.masterBarList}
               currentRouterPath={props.location.pathname}/>}
             />
-            <Route path='/bars' render={(props)=><BarList
+          <Route path='/bars' render={(props)=><AllBarList
               currentRouterPath={props.location.pathname}
               barList={this.state.masterBarList}/>}
             />
