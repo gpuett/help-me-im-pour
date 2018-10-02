@@ -2,10 +2,12 @@
   "name": "react-im-pour",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://gpuett.github.io/help-me-im-pour/",
   "dependencies": {
     "ajv": "^6.5.4",
     "axios": "^0.18.0",
     "file-loader": "^1.1.11",
+    "gh-pages": "^2.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
@@ -22,6 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "lint": "eslint src/*.jsx src/**/**; exit 0",
     "lint-fix": "eslint src/*.jsx src/**/** --fix; exit 0"
